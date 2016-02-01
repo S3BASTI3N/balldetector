@@ -25,9 +25,9 @@ std::tuple<unsigned, unsigned> BallDetector::operator()() {
 
   for (int i = 0; i < binary_img.rows; i++) {
     for (int j = 0; j < binary_img.cols; j++) {
-      if (binary_img.at<unsigned char>(i, j, 0) != 0) {
-        x += i;
-        y += j;
+      if (binary_img.at<cv::Vec3b>(i,j)[0] != 0) {
+        x += j;
+        y += i;
         count++;
       }
     }

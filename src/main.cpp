@@ -14,11 +14,14 @@ int main1(int argc, char** argv) {
   b.set_visualization(true);
   b.set_color(cv::Scalar(0, 0, 170), cv::Scalar(100, 100, 255));
 
-  b.open_stream(1);
+  b.open_stream(0);
   auto position = b();
-  while (std::get<0>(position) || std::get<1>(position)) {
+  std::cout << std::get<0>(position) << " " << std::get<1>(position) << std::endl;
+  while (1==1) {
     position = b();
+    std::cout << std::get<0>(position) << " " << std::get<1>(position) << std::endl;
   }
+  std::cout << "Exiting" << std::endl;
   return 0;
 }
 
